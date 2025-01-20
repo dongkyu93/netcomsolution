@@ -1,0 +1,94 @@
+자료 구조 (Data Structures)
+
+자료 구조는 데이터를 효율적으로 저장하고 관리하기 위한 방법입니다. 여러 가지 자료 구조가 있지만, 가장 기본적이고 많이 사용되는 몇 가지를 살펴보겠습니다.
+
+1. 배열 (Array)
+
+배열은 가장 기본적인 자료 구조로, 동일한 데이터 타입의 요소들을 연속된 메모리 공간에 저장합니다.
+
+특징:
+- 인덱스를 통한 빠른 접근
+- 크기가 고정됨
+- 삽입과 삭제가 비효율적
+
+예시 (Python):
+
+fruits = ["apple", "banana", "cherry", "date"]
+print(fruits)  # 출력: banana
+fruits = "grape"
+print(fruits)  # 출력: ["apple", "banana", "grape", "date"]
+
+2. 큐 (Queue)
+
+큐는 먼저 들어온 데이터가 먼저 나가는 FIFO(First-In-First-Out) 구조를 가집니다.
+
+특징:
+- 데이터 삽입은 뒤에서, 삭제는 앞에서 이루어짐
+- 대기열 시스템에 주로 사용됨
+
+예시 (Python):
+
+from collections import deque
+
+queue = deque()
+queue.append("Task 1")
+queue.append("Task 2")
+queue.append("Task 3")
+
+print(queue.popleft())  # 출력: Task 1
+print(queue.popleft())  # 출력: Task 2
+
+3. 스택 (Stack)
+
+스택은 나중에 들어온 데이터가 먼저 나가는 LIFO(Last-In-First-Out) 구조를 가집니다.
+
+특징:
+- 데이터 삽입과 삭제가 한쪽 끝에서만 이루어짐
+- 함수 호출, 웹 브라우저 방문 기록 등에 사용됨
+
+예시 (Python):
+
+stack = []
+stack.append("Page 1")
+stack.append("Page 2")
+stack.append("Page 3")
+
+print(stack.pop())  # 출력: Page 3
+print(stack.pop())  # 출력: Page 2
+
+4. 연결 리스트 (Linked List)
+
+연결 리스트는 각 노드가 데이터와 다음 노드에 대한 참조를 가지는 선형 자료 구조입니다.
+
+특징:
+- 동적 크기 조정 가능
+- 삽입과 삭제가 효율적
+- 임의 접근이 어려움
+
+예시 (Python):
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
+
+linked_list = LinkedList()
+linked_list.append(1)
+linked_list.append(2)
+linked_list.append(3)
+
+이러한 자료 구조들은 각각의 특성에 따라 다양한 상황에서 활용됩니다. 효율적인 프로그래밍을 위해서는 상황에 맞는 적절한 자료 구조를 선택하는 것이 중요합니다.
