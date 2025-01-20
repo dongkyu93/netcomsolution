@@ -4,6 +4,8 @@ import java.net.*;   // 네트워크 관련 패키지 임포트
 /**
  * Echo_Server 클래스
  * 클라이언트로부터 받은 메시지를 그대로 돌려보내는 에코 서버
+ * netstat -ano | findstr :9999
+ * telnet localhost 9999
  */
 public class Echo_Server {
     public static void main(String[] args) throws IOException {
